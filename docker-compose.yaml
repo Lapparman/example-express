@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  express:
+    image: 'lapparman/express'
+    container_name: 'express'
+    restart: 'always'
+    ports:
+      - "3000:3000"
+    # volumes:
+    # # - ./:/var/www/html
+    # - /etc/hosts:/etc/hosts
+    # - /logs/merchant-info-sys:/var/www/html/storage/logs
+    # - /logs/apache2:/var/log/apache2

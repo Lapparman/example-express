@@ -1,14 +1,16 @@
 # syntax=docker/dockerfile:1
 
-FROM node:18-alpine
+FROM node:14-slim
 ENV NODE_ENV=production
 
 WORKDIR /app
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY ["package*.json", "./"]
 
-RUN npm install --production
+RUN npm install
 
 COPY . .
 
-CMD ["node", "index.js"]
+EXPOSE 3000
+
+CMD ["npm", "start"]
